@@ -20,7 +20,7 @@ export const siteConfig = {
     dither: false,          // Componente Dither.jsx (Apagado por defecto por ahora)
     
     // Controles de Identidad
-    lanyard3D: true,        // Componente Lanyard.jsx (El carnet 3D interactivo)
+    lanyard3D: false,        // Componente Lanyard.jsx (El carnet 3D interactivo)
     carnet2DHUD: true,      // El carnet estático de la esquina
   },
 
