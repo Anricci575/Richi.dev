@@ -322,7 +322,6 @@ h2, h3 { color: var(--text-heading); }
    7. ANIMACIÓN Y ESTILOS DEL CARNET ID Y LANYARD
    ========================================= */
 
-/* Botones de navegación para los carnets */
 .id-toggle-btn {
   background: transparent;
   border: 1px solid var(--accent-color);
@@ -399,15 +398,22 @@ h2, h3 { color: var(--text-heading); }
   pointer-events: auto;
 }
 
+
 /* ========================================================= */
 /* --- 8. PROTOCOLO RESPONSIVE DEFINITIVO (MÓVILES) --- */
 /* ========================================================= */
 
 @media screen and (max-width: 768px) {
-  /* 1. NAVEGACIÓN Y LOGO (Letras juntas y centradas) */
+  
+  /* 1. REPARACIÓN DEL NAVBAR (Evita el corte del logo) */
+  .navbar {
+    height: auto !important; /* Forza a que crezca si es necesario */
+    padding-bottom: 15px; 
+  }
+
   .nav-container {
     flex-direction: column;
-    padding: 10px;
+    padding: 15px 10px 0 10px; 
     gap: 15px;
   }
   
@@ -415,6 +421,7 @@ h2, h3 { color: var(--text-heading); }
     width: 100%;
     text-align: center;
     margin-bottom: 5px;
+    margin-top: 10px; 
   }
 
   .logo * {
@@ -431,31 +438,32 @@ h2, h3 { color: var(--text-heading); }
   }
 
   /* ========================================================= */
-  /* 2. EL FIX DEL CARNET 2D: MODAL POP-UP CENTRADO */
+  /* 2. EL FIX DEL CARNET 2D: TAMAÑO REAL PARA MÓVILES */
   /* ========================================================= */
   .id-card-hud-image {
-    width: 280px; /* Tamaño perfecto para móvil */
-    height: auto;
-    left: 50% !important; /* Anclado a la mitad horizontal */
+    width: 85vw !important;  /* Forza el 85% del ancho de la pantalla */
+    max-width: none !important; /* QUITA CUALQUIER LÍMITE DE TAMAÑO */
+    height: auto !important; 
+    left: 50% !important; 
     right: auto !important; 
     transform: translateX(-50%) !important; 
-    /* NO le ponemos 'top' aquí para que se esconda arriba cuando esté apagado */
   }
 
-  /* Cuando el botón se pulsa, vuela al centro exacto */
   .id-card-hud-image.active {
-    top: 50% !important; /* A la mitad vertical de la pantalla */
-    transform: translate(-50%, -50%) !important; /* Centrado absoluto X e Y */
+    top: 55% !important; /* Lo bajamos un poquitito más al centro */
+    transform: translate(-50%, -50%) !important; 
   }
   
   .id-image-content {
-    width: 100%;
-    height: auto;
+    width: 100% !important; /* Forza a la imagen a llenar el contenedor */
+    height: auto !important;
   }
 
-  /* 3. ACOMODAR LOS TEXTOS DEL HERO */
+  /* ========================================================= */
+  /* 3. REPARACIÓN DEL HERO */
+  /* ========================================================= */
   .hero-content {
-    margin-top: 100px !important; /* Suficiente espacio para la navbar */
+    margin-top: 180px !important; 
     padding: 0 15px;
     display: flex;
     flex-direction: column;
