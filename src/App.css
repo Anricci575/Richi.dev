@@ -717,3 +717,91 @@ h2, h3 {
     padding: 5px;
   }
 }
+
+/* ========================================================= */
+/* --- PROTOCOLO RESPONSIVE (MÓVILES Y TABLETS) --- */
+/* ========================================================= */
+
+@media screen and (max-width: 768px) {
+  /* 1. NAVEGACIÓN: Apilar y centrar */
+  .nav-container {
+    flex-direction: column;
+    padding: 15px 10px;
+    gap: 10px;
+  }
+  
+  .logo {
+    margin-top: 5px;
+  }
+  
+  /* Achicar el logo en móvil */
+  .logo span, .logo div {
+    font-size: 1.8rem !important; 
+  }
+
+  .nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    padding: 0;
+  }
+
+  .nav-links li a {
+    font-size: 0.75rem;
+    padding: 5px;
+  }
+
+  /* 2. TEXTOS DEL HERO: Ajustar al ancho de la pantalla */
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 15px;
+    margin-top: 40px; /* Bajar un poco para que la navbar no lo tape */
+  }
+
+  .hero-title-anim {
+    font-size: 2.8rem !important; /* Texto más pequeño */
+    text-align: center;
+    line-height: 1.1;
+  }
+
+  .hero-label-anim {
+    font-size: 1rem !important;
+    text-align: center;
+  }
+
+  .hero-content h2 {
+    font-size: 0.85rem !important;
+    letter-spacing: 2px !important;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .hero-content p {
+    font-size: 0.8rem;
+    text-align: center;
+  }
+
+  /* 3. PROYECTOS: 1 sola columna en móvil */
+  .projects-grid {
+    grid-template-columns: 1fr; 
+  }
+
+  /* 4. CARNET 2D ESTÁTICO: Centrar en pantalla */
+  .id-card-hud-image {
+    width: 280px;
+    top: 180px;
+    right: 50%;
+    transform: translateX(50%); /* Lo centra perfectamente */
+  }
+}
+
+/* Ajuste extra para teléfonos muy pequeños (ej: iPhone SE) */
+@media screen and (max-width: 400px) {
+  .hero-title-anim {
+    font-size: 2.2rem !important;
+  }
+}
