@@ -637,4 +637,83 @@ h2, h3 {
   z-index: 10000;
   pointer-events: auto;
 }
+/* ========================================================= */
+/* --- PROTOCOLO RESPONSIVE (MÓVILES Y TABLETS) --- */
+/* ========================================================= */
 
+@media screen and (max-width: 768px) {
+  /* 1. NAVEGACIÓN: Apilar elementos y centrar */
+  .nav-container {
+    flex-direction: column;
+    padding: 15px 10px;
+    gap: 15px;
+  }
+  
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    font-size: 0.85rem;
+  }
+
+  /* 2. HERO: Reducir tamaños de fuente para que no se desborde */
+  .hero-title-anim {
+    font-size: 2.5rem !important; /* Reducimos el nombre */
+  }
+  
+  .hero-content h2 {
+    font-size: 1rem !important;
+    letter-spacing: 3px !important;
+    text-align: center;
+  }
+  
+  .hero-content p {
+    font-size: 0.85rem;
+    text-align: center;
+  }
+
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 20px;
+  }
+
+  /* 3. PROYECTOS: Pasar de varias columnas a 1 sola */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Una columna que ocupa el 100% */
+    gap: 20px;
+    padding: 0 15px;
+  }
+
+  /* 4. DECORACIÓN HUD: Hacer las esquinas más sutiles en pantallas pequeñas */
+  .hud-corner {
+    width: 20px;
+    height: 20px;
+    border-width: 2px;
+  }
+
+  /* 5. CARNET 2D (ESTÁTICO): Centrarlo y achicarlo un poco */
+  .id-card-hud-image {
+    width: 280px;
+    top: 150px;
+    right: 50%;
+    transform: translateX(50%); /* Esto lo centra perfectamente en el eje X */
+  }
+
+  /* 6. PADDING GENERAL DE SECCIONES */
+  .section {
+    padding: 60px 10px;
+  }
+}
+
+/* Ajustes para teléfonos muy pequeños (ej. iPhone SE) */
+@media screen and (max-width: 480px) {
+  .hero-title-anim {
+    font-size: 2rem !important;
+  }
+  .nav-links li a {
+    padding: 5px;
+  }
+}
