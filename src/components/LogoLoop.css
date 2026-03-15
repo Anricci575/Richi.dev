@@ -1,0 +1,84 @@
+.logo-loop-wrapper {
+  position: relative;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  padding: 2rem 0;
+  /* Fondo transparente para que se mezcle */
+  background: transparent;
+}
+
+.loop-track {
+  display: flex;
+  width: max-content; /* El ancho se adapta al contenido */
+  gap: var(--gap);
+  animation: scroll var(--anim-duration) linear infinite;
+  animation-direction: var(--anim-direction);
+  animation-play-state: var(--anim-state);
+}
+
+.loop-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0; /* Evita que se aplasten */
+  color: #6e6e6e; /* Color base (gris dim) */
+  transition: transform 0.3s, color 0.3s;
+  cursor: pointer;
+}
+
+.loop-item:hover {
+  color: #00f3ff; /* Color Cyan al pasar el mouse */
+  z-index: 10;
+}
+
+.scale-hover:hover {
+  transform: scale(1.2);
+}
+
+.logo-icon {
+  font-size: var(--icon-size);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-title {
+  margin-top: 0.5rem;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
+/* Animación de desplazamiento infinito */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    /* Desplaza la mitad del contenido (asumiendo que duplicamos la lista) */
+    /* Ajuste fino: movemos -25% si cuadruplicamos la lista */
+    transform: translateX(-25%); 
+  }
+}
+
+/* Efectos de desvanecimiento laterales */
+.loop-fade {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.fade-left {
+  left: 0;
+  background: linear-gradient(to right, var(--fade-color), transparent);
+}
+
+.fade-right {
+  right: 0;
+  background: linear-gradient(to left, var(--fade-color), transparent);
+}
