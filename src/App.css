@@ -457,25 +457,30 @@ h2, h3 { color: var(--text-heading); }
   }
 
   /* ========================================================= */
-  /* 2. EL FIX DEL CARNET 2D: TAMAÑO REAL PARA MÓVILES */
+  /* 2. EL FIX DEL CARNET 2D: MAS GRANDE Y CENTRADO EN MOVIL */
   /* ========================================================= */
   .id-card-hud-image {
-    width: 85vw !important;
-    max-width: none !important;
+    width: 92vw !important;        /* Casi todo el ancho de pantalla */
+    max-width: 400px !important;   /* Tope en tablets */
     height: auto !important; 
     left: 50% !important; 
     right: auto !important; 
+    top: -150vh !important;        /* Estado oculto */
     transform: translateX(-50%) !important; 
+    /* Sombra para que resalte sobre el fondo */
+    filter: drop-shadow(0 0 30px rgba(0, 243, 255, 0.35)) !important;
   }
 
   .id-card-hud-image.active {
-    top: 55% !important;
+    /* Centrado debajo de la navbar (navbar mide ~130px en movil) */
+    top: calc(50% + 65px) !important;
     transform: translate(-50%, -50%) !important; 
   }
   
   .id-image-content {
     width: 100% !important;
     height: auto !important;
+    border-radius: 20px !important;
   }
 
   /* ========================================================= */
