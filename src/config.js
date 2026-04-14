@@ -49,7 +49,7 @@ export const siteConfig = {
        id: 'mi-proyecto-2',
        title: 'NOMBRE DEL PROYECTO',
        description: 'D🔍 Directorio de IA Futuristas - Comparador de herramientas de inteligencia artificial.',
-       image: '/projects/mi-proyecto-2.png',
+       image: './assets/image.png',
        urlLive: '',
        urlGithub: 'https://anricci575.github.io/pagina-de-ias-2/',
        tags: ['html', 'Js', 'css',],
