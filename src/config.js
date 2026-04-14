@@ -37,7 +37,7 @@ export const siteConfig = {
     {
       id: 'instagram',
       label: 'INSTAGRAM',
-      url: 'https://www.instagram.com/anricci575', // 👈 Cambia tu usuario aquí
+      url: 'https://www.instagram.com/andres.ricci.90/', // 👈 Cambia tu usuario aquí
     },
     {
       id: 'github',
