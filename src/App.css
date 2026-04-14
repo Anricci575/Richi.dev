@@ -290,6 +290,100 @@ h2, h3 { color: var(--text-heading); }
 }
 
 /* =========================================
+   5b. BARRA DE REDES SOCIALES
+   ========================================= */
+
+.social-links-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 3rem;
+  width: 100%;
+}
+
+.social-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 24px;
+  border: 1px solid var(--accent-color);
+  color: var(--accent-color);
+  background: transparent;
+  font-family: var(--font-tech);
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  text-decoration: none;
+  text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.3s ease, background 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.social-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--accent-color);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+  z-index: 0;
+}
+
+.social-btn:hover::before {
+  transform: scaleX(1);
+}
+
+.social-btn:hover {
+  color: var(--bg-color);
+  box-shadow: 0 0 20px rgba(0, 243, 255, 0.45);
+  transform: translateY(-3px);
+}
+
+.social-icon,
+.social-label {
+  position: relative;
+  z-index: 1;
+}
+
+.social-icon {
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+}
+
+/* Colores únicos por red al hacer hover */
+.social-btn[data-social="instagram"]::before { background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+.social-btn[data-social="instagram"]:hover   { box-shadow: 0 0 20px rgba(220, 39, 67, 0.5); color: #fff; }
+
+.social-btn[data-social="github"]::before    { background: #24292e; }
+.social-btn[data-social="github"]:hover      { box-shadow: 0 0 20px rgba(255, 255, 255, 0.2); color: #fff; }
+
+.social-btn[data-social="linkedin"]::before  { background: #0a66c2; }
+.social-btn[data-social="linkedin"]:hover    { box-shadow: 0 0 20px rgba(10, 102, 194, 0.5); color: #fff; }
+
+.social-btn[data-social="twitter"]::before   { background: #1da1f2; }
+.social-btn[data-social="twitter"]:hover     { box-shadow: 0 0 20px rgba(29, 161, 242, 0.5); color: #fff; }
+
+/* Móvil: botones apilados */
+@media screen and (max-width: 768px) {
+  .social-links-bar {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 0 20px;
+  }
+
+  .social-btn {
+    width: 100%;
+    max-width: 280px;
+    justify-content: center;
+    padding: 14px 20px;
+  }
+}
+
+/* =========================================
    6. ESTILOS FUTURISTAS (HUD / CYBERPUNK)
    ========================================= */
 .hud-corner {

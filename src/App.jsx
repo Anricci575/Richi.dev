@@ -10,7 +10,7 @@ import Lanyard from './components/Lanyard';
 // import Dither from './components/Dither'; 
 
 // 1. IMPORTAR LOS ICONOS
-import { FaSun, FaMoon, FaIdBadge, FaIdCard } from 'react-icons/fa';
+import { FaSun, FaMoon, FaIdBadge, FaIdCard, FaInstagram, FaGithub, FaLinkedin, FaTwitter, FaGlobe } from 'react-icons/fa';
 import { SiReact, SiVuedotjs, SiNodedotjs, SiExpress, SiMysql, SiTailwindcss, SiPython, SiFigma } from 'react-icons/si';
 
 // 2. IMPORTAR LAS IMÁGENES
@@ -304,6 +304,34 @@ function App() {
               <span className="btn-tag">CORE_STATUS: STABLE</span>
             </a>
           </div>
+
+          {/* ── BOTONES DE REDES SOCIALES ── */}
+          {siteConfig.socialLinks?.length > 0 && (
+            <div className="social-links-bar">
+              {siteConfig.socialLinks.map((social) => (
+                <a
+                  key={social.id}
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="social-btn"
+                  aria-label={social.label}
+                  data-social={social.id}
+                >
+                  <span className="social-icon">
+                    {social.id === 'instagram' && <FaInstagram />}
+                    {social.id === 'github'    && <FaGithub />}
+                    {social.id === 'linkedin'  && <FaLinkedin />}
+                    {social.id === 'twitter'   && <FaTwitter />}
+                    {/* Si el id no coincide con ninguno, muestra un icono genérico */}
+                    {!['instagram','github','linkedin','twitter'].includes(social.id) && <FaGlobe />}
+                  </span>
+                  <span className="social-label">{social.label}</span>
+                </a>
+              ))}
+            </div>
+          )}
+
           <footer className="footer" style={{ textAlign: 'center', marginTop: '4rem', color: 'var(--text-dim)' }}>
             <p>SYSTEM_STATUS: ONLINE | © 2026 RICHI.DEV</p>
           </footer>

@@ -28,5 +28,32 @@ export const siteConfig = {
   lanyardConfig: {
     autoInicio: true,        // ¿Aparece solo al cargar la web?
     duracionPantalla: 3000, // Tiempo en milisegundos (10 segundos)
-  }
+  },
+
+  // === REDES SOCIALES ===
+  // Agrega, quita o comenta cualquier red fácilmente desde aquí.
+  // Para agregar una nueva: { id: 'nombre', label: 'LABEL', url: 'https://...' }
+  socialLinks: [
+    {
+      id: 'instagram',
+      label: 'INSTAGRAM',
+      url: 'https://www.instagram.com/anricci575', // 👈 Cambia tu usuario aquí
+    },
+    {
+      id: 'github',
+      label: 'GITHUB',
+      url: 'https://github.com/Anricci575',        // 👈 Cambia tu usuario aquí
+    },
+    // ── SLOT LIBRE: descomenta y completa para agregar otra red ──
+    // {
+    //   id: 'linkedin',
+    //   label: 'LINKEDIN',
+    //   url: 'https://linkedin.com/in/tu-usuario',
+    // },
+    // {
+    //   id: 'twitter',
+    //   label: 'X / TWITTER',
+    //   url: 'https://x.com/tu-usuario',
+    // },
+  ],
 };
