@@ -33,7 +33,7 @@ export const siteConfig = {
   // === PROYECTOS ===
   // Para agregar un proyecto: copia un bloque, rellena los campos
   // y coloca el screenshot en /public/projects/nombre.png
-  //projects: [
+  projects: [
     //{
      // id: 'andres-pos',
      // title: 'SISTEMA "ANDRÉS" POS',
