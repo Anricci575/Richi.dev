@@ -10,7 +10,7 @@ import Lanyard from './components/Lanyard';
 // import Dither from './components/Dither'; 
 
 // 1. IMPORTAR LOS ICONOS
-import { FaSun, FaMoon, FaIdBadge, FaIdCard, FaInstagram, FaGithub, FaLinkedin, FaTwitter, FaGlobe } from 'react-icons/fa';
+import { FaSun, FaMoon, FaIdBadge, FaIdCard, FaInstagram, FaGithub, FaLinkedin, FaTwitter, FaGlobe, FaExternalLinkAlt, FaCode } from 'react-icons/fa';
 import { SiReact, SiVuedotjs, SiNodedotjs, SiExpress, SiMysql, SiTailwindcss, SiPython, SiFigma } from 'react-icons/si';
 
 // 2. IMPORTAR LAS IMÁGENES
@@ -258,7 +258,6 @@ function App() {
           <div className="section-header">
             <span className="subtitle">DEPLOYED_MODULES // V.1.0</span>
             <h2>
-              {/* COMPONENTE: DecryptedText */}
               {siteConfig.components?.decryptedText ? (
                 <DecryptedText
                   text="ARCHIVO DE PROYECTOS"
@@ -275,18 +274,60 @@ function App() {
               )}
             </h2>
           </div>
+
           <div className="projects-grid">
-            <div className="project-card futurist-card">
-              <div className="project-info">
-                <h3>SISTEMA "ANDRÉS" POS</h3>
-                <p>Plataforma comercial Enterprise. Gestión de inventario en tiempo real, facturación PDF.</p>
-                <ul className="tech-tags futurist-tags">
-                  <li>Vue 3</li>
-                  <li>Node</li>
-                  <li>MySQL</li>
-                </ul>
+            {(siteConfig.projects ?? []).map((project) => (
+              <div key={project.id} className="project-card futurist-card">
+
+                {/* ── IMAGEN DE VISTA PREVIA ── */}
+                <div className="project-preview">
+                  {project.image ? (
+                    <img
+                      src={project.image}
+                      alt={`Vista previa de ${project.title}`}
+                      className="project-preview-img"
+                    />
+                  ) : (
+                    <div className="project-preview-placeholder">
+                      <span>[ NO_IMAGE ]</span>
+                    </div>
+                  )}
+                  {/* Badge de status */}
+                  <span className={`project-status status-${project.status?.toLowerCase()}`}>
+                    {project.status}
+                  </span>
+                </div>
+
+                {/* ── INFO ── */}
+                <div className="project-info">
+                  <h3>{project.title}</h3>
+                  <p>{project.description}</p>
+
+                  <ul className="tech-tags futurist-tags">
+                    {project.tags?.map((tag) => (
+                      <li key={tag}>{tag}</li>
+                    ))}
+                  </ul>
+
+                  {/* Botones Live / GitHub */}
+                  {(project.urlLive || project.urlGithub) && (
+                    <div className="project-links">
+                      {project.urlLive && (
+                        <a href={project.urlLive} target="_blank" rel="noopener noreferrer" className="project-link-btn">
+                          <FaExternalLinkAlt /> LIVE
+                        </a>
+                      )}
+                      {project.urlGithub && (
+                        <a href={project.urlGithub} target="_blank" rel="noopener noreferrer" className="project-link-btn project-link-btn--ghost">
+                          <FaCode /> CÓDIGO
+                        </a>
+                      )}
+                    </div>
+                  )}
+                </div>
+
               </div>
-            </div>
+            ))}
           </div>
         </section>
       )}

@@ -30,6 +30,34 @@ export const siteConfig = {
     duracionPantalla: 3000, // Tiempo en milisegundos (10 segundos)
   },
 
+  // === PROYECTOS ===
+  // Para agregar un proyecto: copia un bloque, rellena los campos
+  // y coloca el screenshot en /public/projects/nombre.png
+  projects: [
+    {
+      id: 'andres-pos',
+      title: 'SISTEMA "ANDRÉS" POS',
+      description: 'Plataforma comercial Enterprise. Gestión de inventario en tiempo real, facturación PDF y reportes avanzados.',
+      image: '/projects/andres-pos.png',   // 👈 coloca tu screenshot aquí
+      urlLive: '',                          // URL en vivo (deja '' si no aplica)
+      urlGithub: '',                        // URL del repo (deja '' si no aplica)
+      tags: ['Vue 3', 'Node', 'MySQL'],
+      status: 'DEPLOYED',                   // DEPLOYED | IN_DEV | ARCHIVED
+    },
+    // ── Agrega tu próximo proyecto aquí ──────────────────────────
+    // {
+    //   id: 'mi-proyecto-2',
+    //   title: 'NOMBRE DEL PROYECTO',
+    //   description: 'Descripción breve del proyecto.',
+    //   image: '/projects/mi-proyecto-2.png',
+    //   urlLive: 'https://mi-sitio.com',
+    //   urlGithub: 'https://github.com/Anricci575/mi-repo',
+    //   tags: ['React', 'Firebase'],
+    //   status: 'IN_DEV',
+    // },
+  ],
+
+
   // === REDES SOCIALES ===
   // Agrega, quita o comenta cualquier red fácilmente desde aquí.
   // Para agregar una nueva: { id: 'nombre', label: 'LABEL', url: 'https://...' }

@@ -274,15 +274,141 @@ h2, h3 { color: var(--text-heading); }
   padding: 0 40px; 
 }
 
-.project-card { background: var(--card-bg); border: 1px solid var(--card-border); }
-.project-card:hover { border-color: var(--accent-color); transform: translateY(-5px); }
+.project-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+}
+.project-card:hover {
+  border-color: var(--accent-color);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 40px rgba(0, 243, 255, 0.12);
+}
 
+/* ── IMAGEN PREVIEW ── */
+.project-preview {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  background: #0a0a0a;
+}
+
+.project-preview-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  transition: transform 0.5s ease, filter 0.3s ease;
+  display: block;
+}
+
+.project-card:hover .project-preview-img {
+  transform: scale(1.06);
+  filter: brightness(0.6);
+}
+
+/* Placeholder cuando no hay imagen */
+.project-preview-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-tech);
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  border-bottom: 1px solid var(--card-border);
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 10px,
+    rgba(0, 243, 255, 0.02) 10px,
+    rgba(0, 243, 255, 0.02) 20px
+  );
+}
+
+/* ── BADGE DE STATUS ── */
+.project-status {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-family: var(--font-tech);
+  font-size: 0.62rem;
+  letter-spacing: 1.5px;
+  padding: 3px 8px;
+  border: 1px solid;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(4px);
+  text-transform: uppercase;
+}
+
+.status-deployed { color: #00ff88; border-color: #00ff88; }
+.status-in_dev   { color: #ffd700; border-color: #ffd700; }
+.status-archived { color: #888;    border-color: #888; }
+
+/* ── INFO ── */
 .project-info { padding: 1.5rem; }
-.project-info h3 { font-size: 1.2rem; margin-bottom: 0.5rem; }
-.project-info p { font-size: 0.85rem; line-height: 1.6; margin-bottom: 1rem; color: var(--text-dim); }
+.project-info h3 { font-size: 1.15rem; margin-bottom: 0.5rem; }
+.project-info p {
+  font-size: 0.85rem;
+  line-height: 1.65;
+  margin-bottom: 1rem;
+  color: var(--text-dim);
+}
 
+/* ── TAGS ── */
 .tech-tags { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; }
-.tech-tags li { font-size: 0.7rem; color: var(--accent-color); border: 1px solid var(--accent-color); padding: 2px 8px; font-family: var(--font-tech); }
+.tech-tags li {
+  font-size: 0.7rem;
+  color: var(--accent-color);
+  border: 1px solid var(--accent-color);
+  padding: 2px 8px;
+  font-family: var(--font-tech);
+}
+
+/* ── BOTONES LIVE / CÓDIGO ── */
+.project-links {
+  display: flex;
+  gap: 10px;
+  margin-top: 1.2rem;
+  flex-wrap: wrap;
+}
+
+.project-link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 16px;
+  font-family: var(--font-tech);
+  font-size: 0.72rem;
+  letter-spacing: 1.5px;
+  text-decoration: none;
+  border: 1px solid var(--accent-color);
+  color: var(--bg-color);
+  background: var(--accent-color);
+  transition: all 0.25s ease;
+  text-transform: uppercase;
+}
+
+.project-link-btn:hover {
+  background: transparent;
+  color: var(--accent-color);
+  box-shadow: 0 0 12px rgba(0, 243, 255, 0.3);
+}
+
+/* Variante ghost (solo borde) */
+.project-link-btn--ghost {
+  background: transparent;
+  color: var(--accent-color);
+}
+
+.project-link-btn--ghost:hover {
+  background: var(--accent-color);
+  color: var(--bg-color);
+}
+
 
 .footer {
   margin-top: 3rem; border-top: 1px solid var(--card-border); padding-top: 2rem;
