@@ -34,27 +34,37 @@ export const siteConfig = {
   // Para agregar un proyecto: copia un bloque, rellena los campos
   // y coloca el screenshot en /public/projects/nombre.png
   projects: [
-    //{
-     // id: 'andres-pos',
-     // title: 'SISTEMA "ANDRÉS" POS',
-     // description: 'Plataforma comercial Enterprise. Gestión de inventario en tiempo real, facturación PDF y reportes avanzados.',
-     // image: '/projects/andres-pos.png',   // 👈 coloca tu screenshot aquí
-     // urlLive: '',                          // URL en vivo (deja '' si no aplica)
-     // urlGithub: '',                        // URL del repo (deja '' si no aplica)
-     // tags: ['Vue 3', 'Node', 'MySQL'],
-     // status: 'DEPLOYED',                   // DEPLOYED | IN_DEV | ARCHIVED
-   // },
-    // ── Agrega tu próximo proyecto aquí ──────────────────────────
     {
-       id: 'mi-proyecto-2',
-       title: 'NOMBRE DEL PROYECTO',
-       description: 'D🔍 Directorio de IA Futuristas - Comparador de herramientas de inteligencia artificial.',
-       image: './assets/image.png',
-       urlLive: '',
-       urlGithub: 'https://anricci575.github.io/pagina-de-ias-2/',
-       tags: ['html', 'Js', 'css',],
-       status: 'IN_DEV',
-     },
+      id: 'andres-pos',
+      title: 'SISTEMA "ANDRÉS" POS',
+      description: 'Plataforma comercial Enterprise. Gestión de inventario en tiempo real, facturación PDF y reportes avanzados.',
+      image: '/projects/andres-pos.png',
+      urlLive: '',
+      urlGithub: '',
+      tags: ['Vue 3', 'Node', 'MySQL'],
+      status: 'DEPLOYED',
+    },
+    {
+      id: 'pagina-de-ias',
+      title: 'DIRECTORIO DE IA FUTURISTAS',
+      description: 'Repositorio interactivo con más de 50 herramientas de IA organizadas por categorías. Incluye búsqueda, favoritos y modo retro CRT.',
+      image: '/projects/pagina-de-ias.png',         // ← generada automáticamente
+      urlLive: 'https://anricci575.github.io/pagina-de-ias-2/',
+      urlGithub: '',
+      tags: ['HTML', 'JS', 'CSS', 'Canvas API'],
+      status: 'IN_DEV',
+    },
+    // ── Agrega tu próximo proyecto aquí ──────────────────────────
+    // {
+    //   id: 'mi-proyecto-3',
+    //   title: 'NOMBRE DEL PROYECTO',
+    //   description: 'Descripción breve del proyecto.',
+    //   image: '/projects/mi-proyecto-3.png',
+    //   urlLive: 'https://mi-sitio.com',
+    //   urlGithub: 'https://github.com/Anricci575/mi-repo',
+    //   tags: ['React', 'Firebase'],
+    //   status: 'IN_DEV',
+    // },
   ],
 
 
