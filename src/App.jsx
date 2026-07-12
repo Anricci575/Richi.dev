@@ -11,7 +11,7 @@ import Lanyard from './components/Lanyard';
 
 // 1. IMPORTAR LOS ICONOS
 import { FaSun, FaMoon, FaIdBadge, FaIdCard, FaInstagram, FaGithub, FaLinkedin, FaTwitter, FaGlobe, FaExternalLinkAlt, FaCode, FaTelegramPlane } from 'react-icons/fa';
-import { SiReact, SiVuedotjs, SiMysql, SiTailwindcss, SiPython, SiGo, SiFastapi, SiSupabase, SiFirebase } from 'react-icons/si';
+import { SiReact, SiVuedotjs, SiMysql, SiTailwindcss, SiPython, SiGo, SiFastapi, SiSupabase, SiFirebase, SiHtml5, SiCss3, SiJavascript } from 'react-icons/si';
 
 // 2. IMPORTAR LAS IMÁGENES
 import carnetOscuro from './assets/carnet-oscuro.png';
@@ -54,6 +54,9 @@ function App() {
   };
 
   const techLogos = [
+    { node: <SiHtml5 />, title: "HTML5", href: "#" },
+    { node: <SiCss3 />, title: "CSS3", href: "#" },
+    { node: <SiJavascript />, title: "JavaScript", href: "#" },
     { node: <SiVuedotjs />, title: "Vue.js", href: "#" },
     { node: <SiReact />, title: "React", href: "#" },
     { node: <SiTailwindcss />, title: "Tailwind CSS", href: "#" },
