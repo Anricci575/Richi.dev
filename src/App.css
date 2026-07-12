@@ -20,16 +20,16 @@
   --max-width: 1100px; 
 }
 
-/* TEMA CLARO */
+/* TEMA CLARO (Estética Mejorada) */
 [data-theme="light"] {
-  --bg-color: #f4f7f6;
-  --nav-bg: rgba(255, 255, 255, 0.9);
-  --card-bg: #ffffff;
-  --card-border: #dddddd;
-  --accent-color: #005bb5; /* Azul oscuro tech para modo claro */
-  --text-primary: #333333;
-  --text-dim: #555555;
-  --text-heading: #111111;
+  --bg-color: #f0f4f8;
+  --nav-bg: rgba(255, 255, 255, 0.75);
+  --card-bg: rgba(255, 255, 255, 0.6);
+  --card-border: rgba(255, 255, 255, 0.9);
+  --accent-color: #0056d6; /* Azul vibrante tech para modo claro */
+  --text-primary: #2d3748;
+  --text-dim: #718096;
+  --text-heading: #1a202c;
 }
 
 /* =========================================
@@ -107,7 +107,8 @@ body {
 }
 .nav-links a:hover { 
   color: var(--accent-color); 
-  transition: color 0.2s ease; 
+  text-shadow: 0 0 8px var(--accent-color);
+  transition: color 0.3s ease, text-shadow 0.3s ease; 
 }
 
 .theme-toggle-btn {
@@ -277,6 +278,8 @@ h2, h3 { color: var(--text-heading); }
 .project-card {
   background: var(--card-bg);
   border: 1px solid var(--card-border);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
   overflow: hidden;
 }
