@@ -145,6 +145,7 @@ function App() {
           <div style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
             <ul className="nav-links">
               {siteConfig.sections?.hero && <li><a href="#inicio">/// INICIO</a></li>}
+              {siteConfig.sections?.about && <li><a href="#sobre-mi">/// SOBRE MÍ</a></li>}
               {siteConfig.sections?.skills && <li><a href="#habilidades">/// SKILLS</a></li>}
               {siteConfig.sections?.projects && <li><a href="#proyectos">/// PROYECTOS</a></li>}
               {siteConfig.sections?.contact && <li><a href="#contacto">/// CONTACTO</a></li>}
@@ -212,6 +213,31 @@ function App() {
                 <span className="btn-glitch-content">INICIAR PROTOCOLO</span>
                 <span className="btn-tag">A2-ALPHA</span>
               </a>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* SECCIÓN SOBRE MÍ */}
+      {siteConfig.sections?.about && (
+        <section id="sobre-mi" className="section about">
+          <div className="section-header">
+            <span className="subtitle">USER_PROFILE // OVERVIEW</span>
+            <h2>
+              {siteConfig.components?.decryptedText ? (
+                <DecryptedText text="SOBRE MÍ" animateOn="view" revealDirection="center" speed={110} maxIterations={48} className="revealed" parentClassName="all-letters" encryptedClassName="encrypted" />
+              ) : ("SOBRE MÍ")}
+            </h2>
+          </div>
+          <div className="about-content">
+            <div className="about-card futurist-card">
+              <p>
+                Especialista en desarrollo web, comercio electrónico y automatización de procesos. Ayudo a negocios y proyectos a consolidar su presencia digital creando tiendas virtuales a la medida y sitios web con un diseño impecable y funcional.
+              </p>
+              <br />
+              <p>
+                Más allá del frontend, construyo la lógica detrás de escena: desarrollo infraestructuras backend, integro bases de datos y creo bots personalizados (como integraciones con Telegram) para automatizar tareas repetitivas y optimizar el tiempo. Todo mi trabajo está respaldado por conocimientos en ciberseguridad, asegurando que las plataformas y los datos operen en un entorno protegido y confiable.
+              </p>
             </div>
           </div>
         </section>

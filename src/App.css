@@ -614,6 +614,36 @@ h2, h3 { color: var(--text-heading); }
 
 
 /* ========================================================= */
+/* --- 7. SECCIÓN SOBRE MÍ --- */
+/* ========================================================= */
+.about-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about-card {
+  background: var(--card-bg);
+  border: 1px solid rgba(139, 92, 246, 0.15);
+  border-radius: 16px;
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  padding: 40px;
+  transition: border-color 0.4s ease, box-shadow 0.4s ease;
+  line-height: 1.8;
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  text-align: left;
+}
+
+.about-card:hover {
+  border-color: var(--accent-color);
+  box-shadow: 0 10px 40px rgba(139, 92, 246, 0.15);
+}
+
+/* ========================================================= */
 /* --- 8. PROTOCOLO RESPONSIVE DEFINITIVO (MÓVILES) --- */
 /* ========================================================= */
 

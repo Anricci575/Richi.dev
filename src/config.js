@@ -4,6 +4,7 @@ export const siteConfig = {
   // === CONTROL GLOBAL DE SECCIONES ===
   sections: {
     hero: true,         // La sección principal de bienvenida
+    about: true,        // Sección Sobre Mí
     skills: true,       // Sección de Arsenal Técnico
     projects: true,     // Sección de Archivo de Proyectos
     contact: true,      // Sección de Contacto
