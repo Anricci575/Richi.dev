@@ -1,10 +1,10 @@
 :root {
-  --bg-color: #0a0a0a;
-  --card-bg: rgba(25, 25, 25, 0.7);
-  --accent-color: #0070f3; /* Professional Blue */
-  --text-primary: #ededed;
-  --text-dim: #a1a1aa;
-  --border-tech: 1px solid rgba(255, 255, 255, 0.1);
+  --bg-color: #020204; /* Abyssal Black */
+  --card-bg: rgba(15, 10, 25, 0.4); /* Dark translucent violet */
+  --accent-color: #8b5cf6; /* Mystic Amethyst */
+  --text-primary: #f8f9fa;
+  --text-dim: #8d99ae;
+  --border-tech: 1px solid rgba(139, 92, 246, 0.15);
   --font-heading: 'Inter', sans-serif;
   --font-tech: 'Inter', sans-serif;
 }
@@ -17,11 +17,9 @@ body {
   background-color: var(--bg-color);
   color: var(--text-primary);
   font-family: var(--font-heading);
-  /* Fondo con grilla sutil estilo "Blueprint" */
-  background-image: 
-    linear-gradient(rgba(0, 243, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 243, 255, 0.03) 1px, transparent 1px);
-  background-size: 40px 40px;
+  /* Fondo Premium: Oscuridad profunda con un sutil resplandor central amatista */
+  background-image: radial-gradient(circle at 50% 0%, rgba(139, 92, 246, 0.08) 0%, transparent 60%);
+  background-attachment: fixed;
   overflow-x: hidden;
 }
 

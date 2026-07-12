@@ -49,11 +49,9 @@ body {
   color: var(--text-primary);
   font-family: var(--font-heading);
   
-  /* Fondo con grilla unificada */
-  background-image: 
-    linear-gradient(var(--grid-color) 1px, transparent 1px),
-    linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
-  background-size: 50px 50px;
+  /* Fondo Premium: Oscuridad abismal con resplandor central amatista */
+  background-image: radial-gradient(circle at 50% 0%, rgba(139, 92, 246, 0.08) 0%, transparent 60%);
+  background-attachment: fixed;
   overflow-x: hidden;
 }
 
@@ -221,25 +219,29 @@ body {
   border: 1px solid var(--accent-color);
   color: var(--accent-color); 
   padding: 12px 30px;
-  font-family: var(--font-tech);
-  font-size: 0.9rem;
-  letter-spacing: 2px;
+  border-radius: 8px;
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  letter-spacing: 1px;
   text-decoration: none;
-  transition: all 0.3s ease; 
+  transition: all 0.4s ease; 
 }
 .btn-tech:hover {
-  background: var(--accent-color);
-  color: var(--bg-color) !important; 
+  background: rgba(139, 92, 246, 0.1);
+  color: var(--accent-color) !important;
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.4);
 }
 
 .hero .btn-tech {
-  background: rgba(0, 0, 0, 0.5) !important;
-  border-color: #00f3ff !important;
-  color: #00f3ff !important;
+  background: rgba(15, 10, 25, 0.4) !important;
+  border-color: var(--accent-color) !important;
+  color: var(--accent-color) !important;
+  backdrop-filter: blur(8px);
 }
 .hero .btn-tech:hover {
-  background: #00f3ff !important;
-  color: #000000 !important;
+  background: var(--accent-color) !important;
+  color: #fff !important;
+  box-shadow: 0 8px 30px rgba(139, 92, 246, 0.35);
 }
 
 /* =========================================
@@ -275,16 +277,17 @@ h2, h3 { color: var(--text-heading); }
 
 .project-card {
   background: var(--card-bg);
-  border: 1px solid var(--card-border);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(139, 92, 246, 0.15);
+  border-radius: 16px;
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  transition: border-color 0.4s ease, transform 0.4s ease, box-shadow 0.4s ease;
   overflow: hidden;
 }
 .project-card:hover {
   border-color: var(--accent-color);
   transform: translateY(-6px);
-  box-shadow: 0 12px 40px rgba(0, 243, 255, 0.12);
+  box-shadow: 0 15px 45px rgba(139, 92, 246, 0.15);
 }
 
 /* ── IMAGEN PREVIEW ── */
