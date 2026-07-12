@@ -187,32 +187,30 @@ body {
 
 .hero-title-anim, .hero-title-anim * {
   font-family: var(--font-heading);
-  font-size: 6rem;
-  line-height: 1.3;
+  font-size: 5.5rem;
+  line-height: 1.1;
   color: #ffffff !important; 
-  font-weight: 900;
-  letter-spacing: 8px;
-  text-transform: uppercase;
-  margin-bottom: 2.5rem;
+  font-weight: 800;
+  letter-spacing: -2px;
+  margin-bottom: 1.5rem;
   display: flex; 
   justify-content: center;
   flex-wrap: wrap; 
-  text-shadow: 0px 0px 15px #000, 0px 0px 5px #000;
 }
 
 .hero h2 {
-  font-size: 1.8rem;
-  letter-spacing: 6px;
+  font-size: 1.6rem;
+  font-weight: 500;
+  letter-spacing: 2px;
   margin-bottom: 0.5rem;
   opacity: 0.9;
-  color: #ffffff !important; 
-  text-shadow: 0px 0px 10px #000;
+  color: #a1a1aa !important; 
 }
 
 .hero p {
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   color: #a0a0a0 !important; 
-  text-shadow: 0px 0px 10px #000;
+  font-family: var(--font-heading);
 }
 
 /* Botones */
@@ -516,30 +514,20 @@ h2, h3 { color: var(--text-heading); }
    6. ESTILOS FUTURISTAS (HUD / CYBERPUNK)
    ========================================= */
 .hud-corner {
-  position: fixed; width: 20px; height: 20px;
-  border: 2px solid var(--accent-color);
-  opacity: 0.5; z-index: 100; pointer-events: none;
+  display: none !important;
 }
-.hud-corner.top-left { top: 20px; left: 20px; border-right: none; border-bottom: none; }
-.hud-corner.top-right { top: 20px; right: 20px; border-left: none; border-bottom: none; }
-.hud-corner.bottom-left { bottom: 20px; left: 20px; border-right: none; border-top: none; }
-.hud-corner.bottom-right { bottom: 20px; right: 20px; border-left: none; border-top: none; }
 
 .hud-scanline-v {
-  position: fixed; top: 10%; height: 80%; width: 1px;
-  background: var(--accent-color); opacity: 0.2;
-  z-index: 99; pointer-events: none;
+  display: none !important;
 }
-.hud-scanline-v.left { left: 5px; }
-.hud-scanline-v.right { right: 5px; }
 
-.futurist-btn { position: relative; overflow: visible !important; display: inline-flex !important; align-items: center; justify-content: center; transition: 0.3s ease-in-out !important; }
-.futurist-btn .btn-tag { position: absolute; top: -12px; right: -10px; background: var(--bg-color); color: var(--accent-color); font-family: var(--font-tech); font-size: 0.6rem; padding: 2px 4px; border: 1px solid var(--accent-color); letter-spacing: 1px; }
+.futurist-btn { position: relative; overflow: visible !important; display: inline-flex !important; align-items: center; justify-content: center; transition: 0.3s ease-in-out !important; border-radius: 8px; }
+.futurist-btn .btn-tag { display: none; } /* Hide the tech tag on the button for a cleaner look */
 
-.futurist-card { position: relative; border-left: 3px solid var(--accent-color) !important; overflow: hidden; }
-.futurist-card::after { content: ''; position: absolute; top: 0; right: 0; width: 30px; height: 30px; background: linear-gradient(135deg, transparent 50%, var(--accent-color) 50%); opacity: 0.1; }
-.futurist-card h3::before { content: '// '; color: var(--accent-color); }
-.futurist-card .status-tag { position: absolute; top: 10px; left: 10px; font-family: var(--font-tech); font-size: 0.7rem; padding: 2px 6px; background: rgba(0,0,0,0.8); border: 1px solid; letter-spacing: 1px; }
+.futurist-card { position: relative; border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1) !important; }
+.futurist-card::after { display: none; } /* Hide the decorative corner */
+.futurist-card h3::before { display: none; } /* Remove the // before titles */
+.futurist-card .status-tag { position: absolute; top: 10px; left: 10px; font-family: var(--font-heading); font-size: 0.7rem; padding: 4px 8px; background: rgba(0,0,0,0.8); border-radius: 4px; letter-spacing: 1px; border: none; }
 
 /* =========================================
    7. ANIMACIÓN Y ESTILOS DEL CARNET ID Y LANYARD
