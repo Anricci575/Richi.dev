@@ -10,8 +10,8 @@ import Lanyard from './components/Lanyard';
 // import Dither from './components/Dither'; 
 
 // 1. IMPORTAR LOS ICONOS
-import { FaSun, FaMoon, FaIdBadge, FaIdCard, FaInstagram, FaGithub, FaLinkedin, FaTwitter, FaGlobe, FaExternalLinkAlt, FaCode } from 'react-icons/fa';
-import { SiReact, SiVuedotjs, SiNodedotjs, SiExpress, SiMysql, SiTailwindcss, SiPython, SiFigma } from 'react-icons/si';
+import { FaSun, FaMoon, FaIdBadge, FaIdCard, FaInstagram, FaGithub, FaLinkedin, FaTwitter, FaGlobe, FaExternalLinkAlt, FaCode, FaTelegramPlane } from 'react-icons/fa';
+import { SiReact, SiVuedotjs, SiMysql, SiTailwindcss, SiPython, SiGo, SiFastapi, SiSupabase, SiFirebase } from 'react-icons/si';
 
 // 2. IMPORTAR LAS IMÁGENES
 import carnetOscuro from './assets/carnet-oscuro.png';
@@ -54,14 +54,16 @@ function App() {
   };
 
   const techLogos = [
-    { node: <SiReact />, title: "React", href: "#" },
     { node: <SiVuedotjs />, title: "Vue.js", href: "#" },
-    { node: <SiNodedotjs />, title: "Node.js", href: "#" },
-    { node: <SiExpress />, title: "Express", href: "#" },
-    { node: <SiMysql />, title: "MySQL", href: "#" },
-    { node: <SiTailwindcss />, title: "Tailwind", href: "#" },
+    { node: <SiReact />, title: "React", href: "#" },
+    { node: <SiTailwindcss />, title: "Tailwind CSS", href: "#" },
+    { node: <SiGo />, title: "Go & Gin", href: "#" },
     { node: <SiPython />, title: "Python", href: "#" },
-    { node: <SiFigma />, title: "UI/UX", href: "#" },
+    { node: <SiFastapi />, title: "FastAPI", href: "#" },
+    { node: <SiMysql />, title: "MySQL", href: "#" },
+    { node: <SiSupabase />, title: "Supabase", href: "#" },
+    { node: <SiFirebase />, title: "Firebase", href: "#" },
+    { node: <FaTelegramPlane />, title: "Telegram API", href: "#" },
   ];
 
   return (
