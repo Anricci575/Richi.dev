@@ -7,6 +7,7 @@ import FaultyTerminal from './components/FaultyTerminal';
 const Lanyard = React.lazy(() => import('./components/Lanyard'));
 import BorderGlow from './components/BorderGlow';
 import CardSwap, { Card } from './components/CardSwap';
+import Lenis from '@studio-freight/lenis';
 
 // (El componente Dither está comentado por si lo quieres agregar luego)
 // import Dither from './components/Dither'; 
@@ -39,6 +40,31 @@ function App() {
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
   }, [theme]);
+
+  // SMOOTH SCROLLING (Lenis)
+  useEffect(() => {
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Curva de aceleración
+      direction: 'vertical',
+      gestureDirection: 'vertical',
+      smooth: true,
+      mouseMultiplier: 1,
+      smoothTouch: false,
+      touchMultiplier: 2,
+      infinite: false,
+    });
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+
+    return () => {
+      lenis.destroy();
+    };
+  }, []);
 
   useEffect(() => {
     // 1. Desactivar la memoria de scroll del navegador

@@ -36,7 +36,7 @@
    2. CONFIGURACIÓN GLOBAL Y ANIMACIÓN
    ========================================= */
 * { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+/* html { scroll-behavior: smooth; } disabled to prevent conflict with Lenis */
 
 /* REGLA MAESTRA DE TRANSICIÓN */
 body, .navbar, .project-card, .placeholder-img, .tech-tags li, .footer, 
