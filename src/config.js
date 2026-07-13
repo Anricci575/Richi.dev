@@ -21,13 +21,13 @@ export const siteConfig = {
     dither: false,          // Componente Dither.jsx (Apagado por defecto por ahora)
     
     // Controles de Identidad
-    lanyard3D: false,        // Componente Lanyard.jsx (El carnet 3D interactivo)
+    lanyard3D: true,        // Componente Lanyard.jsx (El carnet 3D interactivo)
     carnet2DHUD: true,      // El carnet estático de la esquina
   },
 
   // === CONFIGURACIONES ESPECÍFICAS ===
   lanyardConfig: {
-    autoInicio: true,        // ¿Aparece solo al cargar la web?
+    autoInicio: false,        // ¿Aparece solo al cargar la web?
     duracionPantalla: 3000, // Tiempo en milisegundos (10 segundos)
   },
 
