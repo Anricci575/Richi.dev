@@ -181,11 +181,11 @@ const CardSwap = ({
         const rect = container.current.getBoundingClientRect();
         const x = e.clientX - rect.left - rect.width / 2;
         const y = e.clientY - rect.top - rect.height / 2;
-        container.current.style.transform = `translate(5%, 20%) rotateX(${-y / 20}deg) rotateY(${x / 20}deg)`;
+        container.current.style.transform = `rotateX(${-y / 20}deg) rotateY(${x / 20}deg)`;
       }}
       onMouseLeave={() => {
         if (container.current) {
-          container.current.style.transform = `translate(5%, 20%) rotateX(0deg) rotateY(0deg)`;
+          container.current.style.transform = `rotateX(0deg) rotateY(0deg)`;
           container.current.style.transition = `transform 0.5s ease-out`;
         }
       }}
