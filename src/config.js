@@ -36,36 +36,45 @@ export const siteConfig = {
   // y coloca el screenshot en /public/projects/nombre.png
   projects: [
     {
-      id: 'andres-pos',
-      title: 'SISTEMA "ANDRÉS" POS',
-      description: 'Plataforma comercial Enterprise. Gestión de inventario en tiempo real, facturación PDF y reportes avanzados.',
-      image: '/projects/andres-pos.png',
-      urlLive: '',
-      urlGithub: '',
-      tags: ['Vue 3', 'Node', 'MySQL'],
-      status: 'DEPLOYED',
+      id: 1,
+      title: 'Richi Tienda',
+      description: 'Plataforma de comercio electrónico moderna y escalable. Optimización de ventas, carrito de compras dinámico y gestión de inventario orientada a maximizar la conversión.',
+      image: null, 
+      tags: ['React', 'Vite', 'Tailwind', 'E-commerce'],
+      urlLive: 'https://richi-tienda.vercel.app/',
+      urlGithub: null, 
+      status: 'DEPLOYED' 
     },
     {
-      id: 'pagina-de-ias',
-      title: 'DIRECTORIO DE IA FUTURISTAS',
-      description: 'Repositorio interactivo con más de 50 herramientas de IA organizadas por categorías. Incluye búsqueda, favoritos y modo retro CRT.',
-      image: '/projects/pagina-de-ias.png',         // ← generada automáticamente
-      urlLive: 'https://anricci575.github.io/pagina-de-ias-2/',
-      urlGithub: '',
-      tags: ['HTML', 'JS', 'CSS', 'Canvas API'],
-      status: 'IN_DEV',
+      id: 2,
+      title: 'Dark Net Operatives',
+      description: 'Experiencia inmersiva en formato terminal. Interfaz estilo cyberpunk y retro, con animaciones y mecánicas que simulan un sistema operativo de la deep web.',
+      image: null,
+      tags: ['HTML', 'CSS', 'JavaScript', 'Retro UI'],
+      urlLive: 'https://root3355.github.io/Dark-Net-Operatives/',
+      urlGithub: null,
+      status: 'DEPLOYED'
     },
-    // ── Agrega tu próximo proyecto aquí ──────────────────────────
-    // {
-    //   id: 'mi-proyecto-3',
-    //   title: 'NOMBRE DEL PROYECTO',
-    //   description: 'Descripción breve del proyecto.',
-    //   image: '/projects/mi-proyecto-3.png',
-    //   urlLive: 'https://mi-sitio.com',
-    //   urlGithub: 'https://github.com/Anricci575/mi-repo',
-    //   tags: ['React', 'Firebase'],
-    //   status: 'IN_DEV',
-    // },
+    {
+      id: 3,
+      title: 'Directorio IA Futuristas',
+      description: 'Catálogo interactivo con las mejores herramientas de Inteligencia Artificial del mercado. Incluye buscador, modo retro CRT y filtrado avanzado por categorías.',
+      image: null,
+      tags: ['HTML', 'CSS', 'JS', 'Canvas API'],
+      urlLive: 'https://anricci575.github.io/pagina-de-ias-2/',
+      urlGithub: null,
+      status: 'DEPLOYED'
+    },
+    {
+      id: 4,
+      title: 'Tool Repository',
+      description: 'Repositorio dinámico de herramientas utilitarias. Diseñado para centralizar recursos y aplicaciones web en un solo lugar con una navegación rápida y fluida.',
+      image: null,
+      tags: ['React', 'Vite', 'Frontend'],
+      urlLive: 'https://tool-repository.vercel.app/',
+      urlGithub: null,
+      status: 'DEPLOYED'
+    }
   ],
 
 
