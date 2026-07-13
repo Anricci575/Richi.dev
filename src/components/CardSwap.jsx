@@ -144,11 +144,10 @@ const CardSwap = ({
     if (pauseOnHover) {
       const node = container.current;
       const pause = () => {
-        tlRef.current?.pause();
         clearInterval(intervalRef.current);
       };
       const resume = () => {
-        tlRef.current?.play();
+        clearInterval(intervalRef.current);
         intervalRef.current = window.setInterval(swap, delay);
       };
       node.addEventListener('mouseenter', pause);
