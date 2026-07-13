@@ -430,14 +430,14 @@ function App() {
           )}
 
           {/* ── CARD SWAP AL FINAL ── */}
-          <div style={{ display: 'flex', justifyContent: 'center', margin: '4rem auto', width: '100%', maxWidth: '500px', height: '400px', position: 'relative', zIndex: 10 }}>
+          <div style={{ display: 'flex', justifyContent: 'center', marginTop: '10rem', marginBottom: '6rem', width: '100%', maxWidth: '600px', height: '400px', position: 'relative', zIndex: 10 }}>
             <CardSwap
               cardDistance={60}
               verticalDistance={70}
               delay={5000}
               pauseOnHover={true}
-              width={350}
-              height={250}
+              width={450}
+              height={300}
             >
               <Card style={{ display: 'flex', flexDirection: 'column', padding: '2rem', justifyContent: 'center', alignItems: 'center', textAlign: 'center' }}>
                 <h3 style={{ color: '#00f3ff', marginBottom: '1rem' }}>MÓDULO DE DEFENSA</h3>

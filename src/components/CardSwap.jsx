@@ -79,6 +79,10 @@ const CardSwap = ({
 
       const [front, ...rest] = order.current;
       const elFront = refs[front].current;
+      
+      // Prevent overlapping animations if one is already playing
+      if (tlRef.current && tlRef.current.isActive()) return;
+
       const tl = gsap.timeline();
       tlRef.current = tl;
 
@@ -132,6 +136,8 @@ const CardSwap = ({
       });
     };
 
+    swapRef.current = swap; // Store swap function to be used outside useEffect
+
     swap();
     intervalRef.current = window.setInterval(swap, delay);
 
@@ -156,6 +162,19 @@ const CardSwap = ({
     return () => clearInterval(intervalRef.current);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [cardDistance, verticalDistance, delay, pauseOnHover, skewAmount, easing]);
+
+  const swapRef = useRef();
+
+  const handleContainerClick = () => {
+    if (swapRef.current) {
+      swapRef.current();
+      // Reset the interval
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+        intervalRef.current = window.setInterval(swapRef.current, delay);
+      }
+    }
+  };
 
   const rendered = childArr.map((child, i) =>
     isValidElement(child)
@@ -194,6 +213,8 @@ const CardSwap = ({
           container.current.style.transition = `transform 0.1s ease-out`;
         }
       }}
+      onClick={handleContainerClick}
+      style={{ width, height, transition: 'transform 0.1s ease-out', cursor: 'pointer' }}
     >
       {rendered}
     </div>
