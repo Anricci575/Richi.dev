@@ -5,6 +5,7 @@ import DecryptedText from './components/DecryptedText';
 import LogoLoop from './components/LogoLoop';
 import FaultyTerminal from './components/FaultyTerminal';
 import Lanyard from './components/Lanyard';
+import BorderGlow from './components/BorderGlow';
 
 // (El componente Dither está comentado por si lo quieres agregar luego)
 // import Dither from './components/Dither'; 
@@ -236,7 +237,13 @@ function App() {
             </h2>
           </div>
           <div className="about-content">
-            <div className="about-card futurist-card">
+            <BorderGlow 
+              className="about-card futurist-card"
+              backgroundColor={theme === 'dark' ? '#0a0a0a' : 'rgba(255, 255, 255, 0.6)'}
+              glowColor={theme === 'dark' ? '180 100 50' : '216 100 42'}
+              colors={theme === 'dark' ? ['#00f3ff', '#8b5cf6', '#c084fc'] : ['#0056d6', '#38bdf8', '#8b5cf6']}
+              borderRadius={16}
+            >
               <p>
                 Especialista en desarrollo web, comercio electrónico y automatización de procesos. Ayudo a negocios y proyectos a consolidar su presencia digital creando tiendas virtuales a la medida y sitios web con un diseño impecable y funcional.
               </p>
@@ -244,7 +251,7 @@ function App() {
               <p>
                 Más allá del frontend, construyo la lógica detrás de escena: desarrollo infraestructuras backend, integro bases de datos y creo bots personalizados (como integraciones con Telegram) para automatizar tareas repetitivas y optimizar el tiempo. Todo mi trabajo está respaldado por conocimientos en ciberseguridad, asegurando que las plataformas y los datos operen en un entorno protegido y confiable.
               </p>
-            </div>
+            </BorderGlow>
           </div>
         </section>
       )}
@@ -314,7 +321,14 @@ function App() {
 
           <div className="projects-grid">
             {(siteConfig.projects ?? []).map((project) => (
-              <div key={project.id} className="project-card futurist-card">
+              <BorderGlow 
+                key={project.id} 
+                className="project-card futurist-card"
+                backgroundColor={theme === 'dark' ? '#0a0a0a' : 'rgba(255, 255, 255, 0.6)'}
+                glowColor={theme === 'dark' ? '180 100 50' : '216 100 42'}
+                colors={theme === 'dark' ? ['#00f3ff', '#8b5cf6', '#c084fc'] : ['#0056d6', '#38bdf8', '#8b5cf6']}
+                borderRadius={16}
+              >
 
                 {/* ── IMAGEN DE VISTA PREVIA ── */}
                 <div className="project-preview">
@@ -363,7 +377,7 @@ function App() {
                   )}
                 </div>
 
-              </div>
+              </BorderGlow>
             ))}
           </div>
         </section>
