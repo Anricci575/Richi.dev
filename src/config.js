@@ -74,6 +74,16 @@ export const siteConfig = {
       urlLive: 'https://tool-repository.vercel.app/',
       urlGithub: null,
       status: 'DEPLOYED'
+    },
+    {
+      id: 5,
+      title: 'DNO-Encryptx2',
+      description: 'Herramienta de ciberseguridad para línea de comandos (CMD). Desarrollada en Python para encriptación avanzada y protección de datos tácticos.',
+      image: null, 
+      tags: ['Python', 'CLI', 'Cybersecurity', 'Cryptography'],
+      urlLive: null,
+      urlGithub: 'https://github.com/Anricci575/DNO-Encryptx2',
+      status: 'STABLE'
     }
   ],
 

@@ -4,7 +4,7 @@ import Shuffle from './components/Shuffle';
 import DecryptedText from './components/DecryptedText'; 
 import LogoLoop from './components/LogoLoop';
 import FaultyTerminal from './components/FaultyTerminal';
-import Lanyard from './components/Lanyard';
+const Lanyard = React.lazy(() => import('./components/Lanyard'));
 import BorderGlow from './components/BorderGlow';
 import CardSwap, { Card } from './components/CardSwap';
 
