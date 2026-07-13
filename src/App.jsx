@@ -116,7 +116,7 @@ function App() {
             <Lanyard 
               key="auto-lanyard"
               frontImage={theme === 'dark' ? carnetOscuro : carnetClaro}
-              imageFit="contain"
+              imageFit="cover"
             />
           </Suspense>
         </div>
