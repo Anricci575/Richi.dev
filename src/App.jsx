@@ -41,11 +41,19 @@ function App() {
   }, [theme]);
 
   useEffect(() => {
-    // Restaurar scroll al top al refrescar
-    if ('scrollRestoration' in history) {
-      history.scrollRestoration = 'manual';
+    // 1. Desactivar la memoria de scroll del navegador
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual';
     }
+    // 2. Limpiar cualquier ancla (#contacto, #proyectos) en la URL al cargar
+    if (window.location.hash) {
+      window.history.replaceState(null, '', window.location.pathname);
+    }
+    // 3. Forzar el scroll al tope de la página
     window.scrollTo(0, 0);
+    setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, 50);
   }, []);
 
   // --- LÓGICA DE AUTO-APAGADO DEL LANYARD (Basada en config) ---
