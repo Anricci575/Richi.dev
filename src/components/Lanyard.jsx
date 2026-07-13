@@ -104,8 +104,8 @@ function Band({
   lanyardWidth = 1
 }) {
   const { viewport } = useThree();
-  // El contenedor CSS ya está a la derecha, así que centramos el Lanyard dentro de él
-  const anchorX = 0;
+  // En móvil se centra, en PC se ancla a la derecha
+  const anchorX = isMobile ? 0 : viewport.width / 2 - 3;
   const anchorY = 4;
 
   const band = useRef(),
