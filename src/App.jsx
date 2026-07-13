@@ -6,6 +6,7 @@ import LogoLoop from './components/LogoLoop';
 import FaultyTerminal from './components/FaultyTerminal';
 import Lanyard from './components/Lanyard';
 import BorderGlow from './components/BorderGlow';
+import CardSwap, { Card } from './components/CardSwap';
 
 // (El componente Dither está comentado por si lo quieres agregar luego)
 // import Dither from './components/Dither'; 
@@ -427,6 +428,31 @@ function App() {
               ))}
             </div>
           )}
+
+          {/* ── CARD SWAP AL FINAL ── */}
+          <div style={{ display: 'flex', justifyContent: 'center', margin: '4rem auto', width: '100%', maxWidth: '500px', height: '400px', position: 'relative' }}>
+            <CardSwap
+              cardDistance={60}
+              verticalDistance={70}
+              delay={5000}
+              pauseOnHover={true}
+              width={500}
+              height={300}
+            >
+              <Card style={{ display: 'flex', flexDirection: 'column', padding: '2rem', justifyContent: 'center', alignItems: 'center', textAlign: 'center' }}>
+                <h3 style={{ color: '#00f3ff', marginBottom: '1rem' }}>MÓDULO DE DEFENSA</h3>
+                <p>Sistemas blindados con las mejores prácticas de ciberseguridad.</p>
+              </Card>
+              <Card style={{ display: 'flex', flexDirection: 'column', padding: '2rem', justifyContent: 'center', alignItems: 'center', textAlign: 'center' }}>
+                <h3 style={{ color: '#c084fc', marginBottom: '1rem' }}>NÚCLEO REACTIVO</h3>
+                <p>Interfaces dinámicas y de alto rendimiento usando tecnología Frontend.</p>
+              </Card>
+              <Card style={{ display: 'flex', flexDirection: 'column', padding: '2rem', justifyContent: 'center', alignItems: 'center', textAlign: 'center' }}>
+                <h3 style={{ color: '#38bdf8', marginBottom: '1rem' }}>SISTEMAS AUTÓNOMOS</h3>
+                <p>Bots y automatizaciones diseñadas para reducir la fricción operativa.</p>
+              </Card>
+            </CardSwap>
+          </div>
 
           <footer className="footer" style={{ textAlign: 'center', marginTop: '4rem', color: 'var(--text-dim)' }}>
             <p>SYSTEM_STATUS: ONLINE | © 2026 RICHI.DEV</p>
