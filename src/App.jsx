@@ -99,19 +99,10 @@ function App() {
       )}
 
       {/* ========================================================= */}
-      {/* --- LANYARD 3D (RENDERIZADO CONDICIONAL POR CONFIG) --- */}
+      {/* --- LANYARD 3D (RENDERIZADO CONTINUO, ANIMADO POR CSS) --- */}
       {/* ========================================================= */}
-      {siteConfig.components?.lanyard3D && showLanyard && (
-        <div className="lanyard-hud-container active" style={{
-          position: 'fixed',
-          top: 0,
-          left: 0,
-          width: '100vw',  
-          height: '100vh',
-          zIndex: 9999,    
-          pointerEvents: 'none', 
-          overflow: 'visible'
-        }}>
+      {siteConfig.components?.lanyard3D && (
+        <div className={`lanyard-hud-container ${showLanyard ? 'active' : 'hidden'}`}>
           <Suspense fallback={null}>
             <Lanyard 
               key="auto-lanyard"

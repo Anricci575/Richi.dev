@@ -1,3 +1,31 @@
+.lanyard-hud-container {
+  position: fixed;
+  top: 0;
+  right: 5%;
+  width: 400px;
+  height: 100vh;
+  z-index: 9999;
+  pointer-events: none;
+  transition: transform 1.2s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.8s ease;
+}
+
+.lanyard-hud-container.hidden {
+  transform: translateY(-120%);
+  opacity: 0;
+}
+
+.lanyard-hud-container.active {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .lanyard-hud-container {
+    right: 0;
+    width: 100vw;
+  }
+}
+
 .lanyard-wrapper {
   position: relative;
   z-index: 0;
