@@ -96,12 +96,13 @@ body {
   font-weight: bold;
 }
 
-.nav-links { display: flex; gap: 30px; list-style: none; }
+.nav-links { display: flex; gap: 30px; list-style: none; flex-wrap: nowrap; }
 .nav-links a {
   color: var(--text-dim); 
   text-decoration: none;
   font-family: var(--font-tech);
   font-size: 0.8rem;
+  white-space: nowrap;
 }
 .nav-links a:hover { 
   color: var(--accent-color); 
