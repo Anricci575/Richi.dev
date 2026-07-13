@@ -115,8 +115,8 @@ function App() {
           <Suspense fallback={null}>
             <Lanyard 
               key="auto-lanyard"
-              theme={theme} 
-              customImage={carnetLanyard} 
+              frontImage={theme === 'dark' ? carnetOscuro : carnetClaro}
+              imageFit="contain"
             />
           </Suspense>
         </div>
