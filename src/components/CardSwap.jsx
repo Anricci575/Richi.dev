@@ -194,7 +194,7 @@ const CardSwap = ({
     <div 
       ref={container} 
       className="card-swap-container" 
-      style={{ width, height, transition: 'transform 0.1s ease-out' }}
+      style={{ width, height, transition: 'transform 0.1s ease-out', cursor: 'pointer' }}
       onMouseMove={(e) => {
         if (!container.current) return;
         const rect = container.current.getBoundingClientRect();
@@ -214,7 +214,6 @@ const CardSwap = ({
         }
       }}
       onClick={handleContainerClick}
-      style={{ width, height, transition: 'transform 0.1s ease-out', cursor: 'pointer' }}
     >
       {rendered}
     </div>
