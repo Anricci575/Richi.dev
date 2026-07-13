@@ -391,67 +391,74 @@ function App() {
       {/* SECCIÓN CONTACTO */}
       {siteConfig.sections?.contact && (
         <section id="contacto" className="section contact">
-          <div className="section-header">
-            <span className="subtitle">COMM_LINK // OPEN</span>
-            <h2>INICIAR CONEXIÓN</h2>
-          </div>
-          <div style={{ textAlign: 'center' }}>
-            <a href="mailto:tucorreo@ejemplo.com" className="btn-tech futurist-btn">
-              <span className="btn-glitch-content">TRANSMITIR MENSAJE</span>
-              <span className="btn-tag">CORE_STATUS: STABLE</span>
-            </a>
-          </div>
-
-          {/* ── BOTONES DE REDES SOCIALES ── */}
-          {siteConfig.socialLinks?.length > 0 && (
-            <div className="social-links-bar">
-              {siteConfig.socialLinks.map((social) => (
-                <a
-                  key={social.id}
-                  href={social.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="social-btn"
-                  aria-label={social.label}
-                  data-social={social.id}
-                >
-                  <span className="social-icon">
-                    {social.id === 'instagram' && <FaInstagram />}
-                    {social.id === 'github'    && <FaGithub />}
-                    {social.id === 'linkedin'  && <FaLinkedin />}
-                    {social.id === 'twitter'   && <FaTwitter />}
-                    {/* Si el id no coincide con ninguno, muestra un icono genérico */}
-                    {!['instagram','github','linkedin','twitter'].includes(social.id) && <FaGlobe />}
-                  </span>
-                  <span className="social-label">{social.label}</span>
+          {/* CONTENEDOR FLEX PARA DOS COLUMNAS */}
+          <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', flexWrap: 'wrap', gap: '4rem', width: '100%' }}>
+            
+            {/* LADO IZQUIERDO: Información de Contacto */}
+            <div style={{ flex: '1 1 300px', maxWidth: '500px', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+              <div className="section-header" style={{ marginBottom: '2rem' }}>
+                <span className="subtitle">COMM_LINK // OPEN</span>
+                <h2>INICIAR CONEXIÓN</h2>
+              </div>
+              
+              <div style={{ textAlign: 'center' }}>
+                <a href="mailto:tucorreo@ejemplo.com" className="btn-tech futurist-btn">
+                  <span className="btn-glitch-content">TRANSMITIR MENSAJE</span>
+                  <span className="btn-tag">CORE_STATUS: STABLE</span>
                 </a>
-              ))}
-            </div>
-          )}
+              </div>
 
-          {/* ── CARD SWAP AL FINAL ── */}
-          <div style={{ display: 'flex', justifyContent: 'center', marginTop: '10rem', marginBottom: '6rem', width: '100%', maxWidth: '600px', height: '400px', position: 'relative', zIndex: 10 }}>
-            <CardSwap
-              cardDistance={60}
-              verticalDistance={70}
-              delay={5000}
-              pauseOnHover={true}
-              width={450}
-              height={300}
-            >
-              <Card style={{ display: 'flex', flexDirection: 'column', padding: '2rem', justifyContent: 'center', alignItems: 'center', textAlign: 'center' }}>
-                <h3 style={{ color: '#00f3ff', marginBottom: '1rem' }}>MÓDULO DE DEFENSA</h3>
-                <p>Sistemas blindados con las mejores prácticas de ciberseguridad.</p>
-              </Card>
-              <Card style={{ display: 'flex', flexDirection: 'column', padding: '2rem', justifyContent: 'center', alignItems: 'center', textAlign: 'center' }}>
-                <h3 style={{ color: '#c084fc', marginBottom: '1rem' }}>NÚCLEO REACTIVO</h3>
-                <p>Interfaces dinámicas y de alto rendimiento usando tecnología Frontend.</p>
-              </Card>
-              <Card style={{ display: 'flex', flexDirection: 'column', padding: '2rem', justifyContent: 'center', alignItems: 'center', textAlign: 'center' }}>
-                <h3 style={{ color: '#38bdf8', marginBottom: '1rem' }}>SISTEMAS AUTÓNOMOS</h3>
-                <p>Bots y automatizaciones diseñadas para reducir la fricción operativa.</p>
-              </Card>
-            </CardSwap>
+              {/* ── BOTONES DE REDES SOCIALES ── */}
+              {siteConfig.socialLinks?.length > 0 && (
+                <div className="social-links-bar" style={{ marginTop: '2rem' }}>
+                  {siteConfig.socialLinks.map((social) => (
+                    <a
+                      key={social.id}
+                      href={social.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="social-btn"
+                      aria-label={social.label}
+                      data-social={social.id}
+                    >
+                      <span className="social-icon">
+                        {social.id === 'instagram' && <FaInstagram />}
+                        {social.id === 'github'    && <FaGithub />}
+                        {social.id === 'linkedin'  && <FaLinkedin />}
+                        {social.id === 'twitter'   && <FaTwitter />}
+                        {!['instagram','github','linkedin','twitter'].includes(social.id) && <FaGlobe />}
+                      </span>
+                      <span className="social-label">{social.label}</span>
+                    </a>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* LADO DERECHO: Card Swap */}
+            <div style={{ flex: '1 1 450px', display: 'flex', justifyContent: 'center', position: 'relative', zIndex: 10, height: '400px', paddingTop: '2rem' }}>
+              <CardSwap
+                cardDistance={50}
+                verticalDistance={60}
+                delay={5000}
+                pauseOnHover={true}
+                width={400}
+                height={260}
+              >
+                <Card style={{ display: 'flex', flexDirection: 'column', padding: '2rem', justifyContent: 'center', alignItems: 'center', textAlign: 'center' }}>
+                  <h3 style={{ color: '#00f3ff', marginBottom: '1rem' }}>MÓDULO DE DEFENSA</h3>
+                  <p>Sistemas blindados con las mejores prácticas de ciberseguridad.</p>
+                </Card>
+                <Card style={{ display: 'flex', flexDirection: 'column', padding: '2rem', justifyContent: 'center', alignItems: 'center', textAlign: 'center' }}>
+                  <h3 style={{ color: '#c084fc', marginBottom: '1rem' }}>NÚCLEO REACTIVO</h3>
+                  <p>Interfaces dinámicas y de alto rendimiento usando tecnología Frontend.</p>
+                </Card>
+                <Card style={{ display: 'flex', flexDirection: 'column', padding: '2rem', justifyContent: 'center', alignItems: 'center', textAlign: 'center' }}>
+                  <h3 style={{ color: '#38bdf8', marginBottom: '1rem' }}>SISTEMAS AUTÓNOMOS</h3>
+                  <p>Bots y automatizaciones diseñadas para reducir la fricción operativa.</p>
+                </Card>
+              </CardSwap>
+            </div>
           </div>
 
           <footer className="footer" style={{ textAlign: 'center', marginTop: '4rem', color: 'var(--text-dim)' }}>
