@@ -102,12 +102,27 @@ function App() {
       {/* --- LANYARD 3D (RENDERIZADO CONTINUO, ANIMADO POR CSS) --- */}
       {/* ========================================================= */}
       {siteConfig.components?.lanyard3D && (
-        <div className={`lanyard-hud-container ${showLanyard ? 'active' : 'hidden'}`}>
+        <div 
+          className="lanyard-hud-container"
+          style={{
+             position: 'fixed',
+             top: 0,
+             left: 0,
+             width: '100vw',
+             height: '100vh',
+             zIndex: 990,
+             pointerEvents: 'none',
+             opacity: showLanyard ? 1 : 0,
+             transform: showLanyard ? 'translateY(0)' : 'translateY(-120%)',
+             transition: 'transform 1s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.8s ease'
+          }}
+        >
           <Suspense fallback={null}>
             <Lanyard 
               key="auto-lanyard"
               frontImage={theme === 'dark' ? carnetOscuro : carnetClaro}
               imageFit="cover"
+              show={showLanyard}
             />
           </Suspense>
         </div>

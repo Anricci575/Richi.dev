@@ -29,7 +29,8 @@ export default function Lanyard({
   backImage = null,
   imageFit = 'contain',
   lanyardImage = null,
-  lanyardWidth = 1
+  lanyardWidth = 1,
+  show = true
 }) {
   const [isMobile, setIsMobile] = useState(() => typeof window !== 'undefined' && window.innerWidth < 768);
 
@@ -46,7 +47,7 @@ export default function Lanyard({
         dpr={[1, isMobile ? 1.5 : 2]}
         gl={{ alpha: transparent }}
         onCreated={({ gl }) => gl.setClearColor(new THREE.Color(0x000000), transparent ? 0 : 1)}
-        style={{ pointerEvents: 'auto' }}
+        style={{ pointerEvents: show ? 'auto' : 'none' }}
       >
         <ambientLight intensity={Math.PI} />
         <Physics gravity={gravity} timeStep={isMobile ? 1 / 30 : 1 / 60}>
