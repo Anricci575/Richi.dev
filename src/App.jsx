@@ -35,10 +35,18 @@ function App() {
     siteConfig.components?.lanyard3D && siteConfig.lanyardConfig?.autoInicio
   ); 
 
-  // --- LÓGICA DE TEMA ---
+  // --- LÓGICA DE TEMA Y SCROLL ---
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
   }, [theme]);
+
+  useEffect(() => {
+    // Restaurar scroll al top al refrescar
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
+  }, []);
 
   // --- LÓGICA DE AUTO-APAGADO DEL LANYARD (Basada en config) ---
   useEffect(() => {
@@ -70,6 +78,9 @@ function App() {
     { node: <SiFirebase />, title: "Firebase", href: "#" },
     { node: <FaTelegramPlane />, title: "Telegram API", href: "#" },
   ];
+
+  const webProjects = (siteConfig.projects ?? []).filter(p => p.type === 'web' || !p.type);
+  const toolProjects = (siteConfig.projects ?? []).filter(p => p.type === 'tool');
 
   return (
     <div className="portfolio-container futurist-hud">
@@ -307,7 +318,7 @@ function App() {
             <h2>
               {siteConfig.components?.decryptedText ? (
                 <DecryptedText
-                  text="ARCHIVO DE PROYECTOS"
+                  text="PROYECTOS WEB"
                   animateOn="view"
                   revealDirection="center"
                   speed={110}
@@ -317,13 +328,13 @@ function App() {
                   encryptedClassName="encrypted"
                 />
               ) : (
-                "ARCHIVO DE PROYECTOS"
+                "PROYECTOS WEB"
               )}
             </h2>
           </div>
 
           <div className="projects-grid">
-            {(siteConfig.projects ?? []).map((project) => (
+            {webProjects.map((project) => (
               <BorderGlow 
                 key={project.id} 
                 className="project-card futurist-card"
@@ -385,6 +396,75 @@ function App() {
               </BorderGlow>
             ))}
           </div>
+
+          {toolProjects.length > 0 && (
+            <>
+              <div className="section-header" style={{ marginTop: '6rem' }}>
+                <span className="subtitle">SECURITY_MODULES // CMD</span>
+                <h2>
+                  {siteConfig.components?.decryptedText ? (
+                    <DecryptedText
+                      text="HERRAMIENTAS Y SCRIPTS"
+                      animateOn="view"
+                      revealDirection="center"
+                      speed={110}
+                      maxIterations={48}
+                      className="revealed"
+                      parentClassName="all-letters"
+                      encryptedClassName="encrypted"
+                    />
+                  ) : (
+                    "HERRAMIENTAS Y SCRIPTS"
+                  )}
+                </h2>
+              </div>
+              <div className="projects-grid">
+                {toolProjects.map((project) => (
+                  <BorderGlow 
+                    key={project.id} 
+                    className="project-card futurist-card"
+                    backgroundColor={theme === 'dark' ? '#0a0a0a' : 'rgba(255, 255, 255, 0.6)'}
+                    glowColor={theme === 'dark' ? '180 100 50' : '216 100 42'}
+                    colors={theme === 'dark' ? ['#00f3ff', '#8b5cf6', '#c084fc'] : ['#0056d6', '#38bdf8', '#8b5cf6']}
+                    glowIntensity={2.5}
+                    glowRadius={70}
+                    borderRadius={16}
+                  >
+                    <div className="project-preview">
+                      {project.image ? (
+                        <img src={project.image} alt={`Vista previa de ${project.title}`} className="project-preview-img" />
+                      ) : (
+                        <div className="project-preview-placeholder"><span>[ NO_IMAGE ]</span></div>
+                      )}
+                      <span className={`project-status status-${project.status?.toLowerCase()}`}>{project.status}</span>
+                    </div>
+                    <div className="project-info">
+                      <h3>{project.title}</h3>
+                      <p>{project.description}</p>
+                      <ul className="tech-tags futurist-tags">
+                        {project.tags?.map((tag) => (<li key={tag}>{tag}</li>))}
+                      </ul>
+                      {(project.urlLive || project.urlGithub) && (
+                        <div className="project-links">
+                          {project.urlLive && (
+                            <a href={project.urlLive} target="_blank" rel="noopener noreferrer" className="project-link-btn">
+                              <FaExternalLinkAlt /> LIVE
+                            </a>
+                          )}
+                          {project.urlGithub && (
+                            <a href={project.urlGithub} target="_blank" rel="noopener noreferrer" className="project-link-btn project-link-btn--ghost">
+                              <FaCode /> CÓDIGO
+                            </a>
+                          )}
+                        </div>
+                      )}
+                    </div>
+                  </BorderGlow>
+                ))}
+              </div>
+            </>
+          )}
+
         </section>
       )}
 
