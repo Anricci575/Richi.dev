@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unknown-property */
 'use client';
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { Canvas, extend, useFrame } from '@react-three/fiber';
+import { Canvas, extend, useFrame, useThree } from '@react-three/fiber';
 import { useGLTF, useTexture, Environment, Lightformer } from '@react-three/drei';
 import { BallCollider, CuboidCollider, Physics, RigidBody, useRopeJoint, useSphericalJoint } from '@react-three/rapier';
 import { MeshLineGeometry, MeshLineMaterial } from 'meshline';
@@ -103,6 +103,11 @@ function Band({
   lanyardImage = null,
   lanyardWidth = 1
 }) {
+  const { viewport } = useThree();
+  // En móvil se centra, en PC se ancla a la derecha
+  const anchorX = isMobile ? 0 : viewport.width / 2 - 3;
+  const anchorY = 4;
+
   const band = useRef(),
     fixed = useRef(),
     j1 = useRef(),
@@ -217,7 +222,7 @@ function Band({
 
   return (
     <>
-      <group position={[0, 4, 0]}>
+      <group position={[anchorX, anchorY, 0]}>
         <RigidBody ref={fixed} {...segmentProps} type="fixed" />
         <RigidBody position={[0.5, 0, 0]} ref={j1} {...segmentProps}>
           <BallCollider args={[0.1]} />
