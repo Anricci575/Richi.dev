@@ -242,6 +242,8 @@ function App() {
               backgroundColor={theme === 'dark' ? '#0a0a0a' : 'rgba(255, 255, 255, 0.6)'}
               glowColor={theme === 'dark' ? '180 100 50' : '216 100 42'}
               colors={theme === 'dark' ? ['#00f3ff', '#8b5cf6', '#c084fc'] : ['#0056d6', '#38bdf8', '#8b5cf6']}
+              glowIntensity={2.5}
+              glowRadius={70}
               borderRadius={16}
             >
               <p>
@@ -327,6 +329,8 @@ function App() {
                 backgroundColor={theme === 'dark' ? '#0a0a0a' : 'rgba(255, 255, 255, 0.6)'}
                 glowColor={theme === 'dark' ? '180 100 50' : '216 100 42'}
                 colors={theme === 'dark' ? ['#00f3ff', '#8b5cf6', '#c084fc'] : ['#0056d6', '#38bdf8', '#8b5cf6']}
+                glowIntensity={2.5}
+                glowRadius={70}
                 borderRadius={16}
               >
 

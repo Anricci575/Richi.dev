@@ -282,7 +282,6 @@ h2, h3 { color: var(--text-heading); }
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
   transition: border-color 0.4s ease, transform 0.4s ease, box-shadow 0.4s ease;
-  overflow: hidden;
 }
 .project-card:hover {
   border-color: var(--accent-color);
