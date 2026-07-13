@@ -31,15 +31,15 @@ export const siteConfig = {
     duracionPantalla: 3000, // Tiempo en milisegundos (10 segundos)
   },
 
-  // === PROYECTOS ===
-  // Para agregar un proyecto: copia un bloque, rellena los campos
-  // y coloca el screenshot en /public/projects/nombre.png
+  // === SECCIÓN DE PROYECTOS ===
+  // Si tienes imágenes para tus proyectos, ponlas en la carpeta /public/projects/
+  // y coloca la ruta aquí.
   projects: [
     {
       id: 1,
       title: 'Richi Tienda',
       description: 'Plataforma de comercio electrónico moderna y escalable. Optimización de ventas, carrito de compras dinámico y gestión de inventario orientada a maximizar la conversión.',
-      image: null, 
+      image: '/projects/richi-tienda.png', 
       tags: ['React', 'Vite', 'Tailwind', 'E-commerce'],
       urlLive: 'https://richi-tienda.vercel.app/',
       urlGithub: null, 
@@ -49,7 +49,7 @@ export const siteConfig = {
       id: 2,
       title: 'Dark Net Operatives',
       description: 'Experiencia inmersiva en formato terminal. Interfaz estilo cyberpunk y retro, con animaciones y mecánicas que simulan un sistema operativo de la deep web.',
-      image: null,
+      image: '/projects/dark-net.png',
       tags: ['HTML', 'CSS', 'JavaScript', 'Retro UI'],
       urlLive: 'https://root3355.github.io/Dark-Net-Operatives/',
       urlGithub: null,
@@ -59,7 +59,7 @@ export const siteConfig = {
       id: 3,
       title: 'Directorio IA Futuristas',
       description: 'Catálogo interactivo con las mejores herramientas de Inteligencia Artificial del mercado. Incluye buscador, modo retro CRT y filtrado avanzado por categorías.',
-      image: null,
+      image: '/projects/ia-futuristas.png',
       tags: ['HTML', 'CSS', 'JS', 'Canvas API'],
       urlLive: 'https://anricci575.github.io/pagina-de-ias-2/',
       urlGithub: null,
@@ -69,7 +69,7 @@ export const siteConfig = {
       id: 4,
       title: 'Tool Repository',
       description: 'Repositorio dinámico de herramientas utilitarias. Diseñado para centralizar recursos y aplicaciones web en un solo lugar con una navegación rápida y fluida.',
-      image: null,
+      image: '/projects/tool-repo.png',
       tags: ['React', 'Vite', 'Frontend'],
       urlLive: 'https://tool-repository.vercel.app/',
       urlGithub: null,
